@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        // Calculate the minimum number of cars required
+        int cars = ceil((double)N / 4);
+
+        printf("%d\n", cars);
+    }
+
+    return 0;
+}
