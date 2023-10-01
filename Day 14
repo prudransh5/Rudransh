@@ -1,0 +1,28 @@
+def min_moves_to_reach_stair(T, test_cases):
+    results = []
+    for i in range(T):
+        X, Y = test_cases[i]
+        dp = [float('inf')] * (X + 1)
+        dp[0] = 0
+        
+        for j in range(1, X + 1):
+            if j - 1 >= 0:
+                dp[j] = min(dp[j], dp[j - 1] + 1)
+            if j - Y >= 0:
+                dp[j] = min(dp[j], dp[j - Y] + 1)
+        
+        results.append(dp[X])
+    
+    return results
+
+# Input
+T = int(input())
+test_cases = []
+for _ in range(T):
+    X, Y = map(int, input().split())
+    test_cases.append((X, Y))
+
+# Calculate and print the minimum number of moves for each test case
+results = min_moves_to_reach_stair(T, test_cases)
+for result in results:
+    print(result)
