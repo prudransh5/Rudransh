@@ -1,0 +1,17 @@
+# Function to check if NEXTGEN satisfies the funding requirements
+def can_get_funded(A, B, X, Y):
+    total_power_needed = A * B  # Total power needed over B years
+    total_power_available = X * Y  # Total power available from the moon's Helium-3
+    if total_power_available >= total_power_needed:
+        return "Yes"
+    else:
+        return "No"
+
+# Input the number of test cases
+T = int(input())
+
+# Iterate through each test case
+for _ in range(T):
+    a, b, x, y = map(int, input().split())
+    result = can_get_funded(a, b, x, y)
+    print(result)
