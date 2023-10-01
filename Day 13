@@ -1,0 +1,15 @@
+# Function to calculate minimum moves
+def min_moves_to_reach_stair(X, Y):
+    if X % Y == 0:
+        return X // Y  # Chef can climb Y stairs at a time evenly
+    else:
+        return (X // Y) + 1  # Chef climbs Y stairs as much as possible, then 1 stair at a time for the remainder
+
+# Input the number of test cases
+T = int(input())
+
+# Iterate through each test case
+for _ in range(T):
+    X, Y = map(int, input().split())
+    result = min_moves_to_reach_stair(X, Y)
+    print(result)
