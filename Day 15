@@ -1,0 +1,19 @@
+def min_operations_to_flip_cards(T, test_cases):
+    results = []
+    for i in range(T):
+        N, X = test_cases[i]
+        min_ops = min(X, N - X)
+        results.append(min_ops)
+    return results
+
+# Input
+T = int(input())
+test_cases = []
+for _ in range(T):
+    N, X = map(int, input().split())
+    test_cases.append((N, X))
+
+# Calculate and print the results
+results = min_operations_to_flip_cards(T, test_cases)
+for result in results:
+    print(result)
