@@ -1,0 +1,23 @@
+# Function to check if Chef can distribute candies as per the conditions
+def can_distribute_candies(N, M):
+    # If the number of friends is odd, it's not possible to distribute evenly
+    if M % 2 != 0:
+        return "No"
+    
+    # Calculate the number of candies each friend should get
+    candies_per_friend = N // M
+    
+    # Check if the number of candies per friend is even
+    if candies_per_friend % 2 == 0:
+        return "Yes"
+    else:
+        return "No"
+
+# Input the number of test cases
+T = int(input())
+
+# Process each test case
+for _ in range(T):
+    N, M = map(int, input().split())
+    result = can_distribute_candies(N, M)
+    print(result)
