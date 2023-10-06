@@ -1,0 +1,18 @@
+# Read the number of test cases
+T = int(input())
+
+# Iterate through each test case
+for _ in range(T):
+    a, b, PA, PB, QA, QB = map(int, input().split())
+
+    # Calculate time penalties
+    time_penalty_P = min(PA, PB)
+    time_penalty_Q = min(QA, QB)
+
+    # Compare time penalties and determine the winner
+    if time_penalty_P < time_penalty_Q:
+        print("P")
+    elif time_penalty_Q < time_penalty_P:
+        print("Q")
+    else:
+        print("TIE")
