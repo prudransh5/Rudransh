@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// Function to calculate the number of eligible voters in Chefland
+int count_eligible_voters(int n, int x, int ages[]) {
+    int eligible_count = 0;
+    for (int i = 0; i < n; i++) {
+        if (ages[i] >= x) {
+            eligible_count++;
+        }
+    }
+    return eligible_count;
+}
+
+int main() {
+    int t; // Number of test cases
+    scanf("%d", &t);
+
+    while (t--) {
+        int n, x; // Number of people, minimum age required to vote
+        scanf("%d %d", &n, &x);
+        int ages[n]; // Ages of people
+
+        // Read ages of people
+        for (int i = 0; i < n; i++) {
+            scanf("%d", &ages[i]);
+        }
+
+        // Calculate and output the number of eligible voters
+        int result = count_eligible_voters(n, x, ages);
+        printf("%d\n", result);
+    }
+
+    return 0;
+}
